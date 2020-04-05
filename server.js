@@ -5,7 +5,8 @@ const app = express();
 
 
 // Database
-const uri = "mongodb+srv://Uwaish55:Uwaish55@cluster0-k5soh.mongodb.net/test?retryWrites=true&w=majority";
+//use your own username and password .
+const uri = "mongodb+srv://<UserName>:<Password>@cluster0-k5soh.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
 );
 const connection = mongoose.connection;
