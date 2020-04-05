@@ -13,7 +13,7 @@ Type in a terminal `npm start` to start the server
 
 2.update(PUT)
 
-3.delete(Post)
+3.delete(POST)
 
 4.create(POST)
 
