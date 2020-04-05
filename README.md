@@ -10,7 +10,10 @@ Type in a terminal `npm start` to start the server
 
 ### Routes
 1.retrieve/:id(GET)
+
 2.update(PUT)
+
 3.delete(Post)
+
 4.create(POST)
 
