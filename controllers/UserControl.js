@@ -15,7 +15,6 @@ module.exports = {
     let user = new UserModel({
      name:req.body.name
     });
-   let id=99
     user.save()
       .then(result => {
         id=String(result._id);
