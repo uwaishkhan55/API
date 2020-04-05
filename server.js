@@ -22,7 +22,7 @@ const UserControl = require('./controllers/UserControl');
 
 // Routes
 app.post('/create', UserControl.create);
-app.post('/update', UserControl.update);
+app.put('/update', UserControl.update);
 app.get('/retrieve/:id', UserControl.retrieve);
 app.delete('/delete', UserControl.delete);
 

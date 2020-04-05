@@ -9,7 +9,7 @@ client.on('connect', function(){
 });
 module.exports = {
 
- //create user
+ //create user 
   create: (req, res) => {
    
     let user = new UserModel({
@@ -28,7 +28,7 @@ module.exports = {
       });  
      
   },
-
+ //update the job by providing id and all other details.
   update: (req, res) => {
     let id= req.body.id;
     client.del(id)
@@ -45,15 +45,18 @@ module.exports = {
         res.json({ success: false, result: err });
       });
   },
-
+  //get request with parameter(id).
+  
+  
   retrieve: (req, res) => {
 
      let id=req.params.id;
-    client.hgetall(String(id), function(err, obj){
+     //first search in cache 
+      client.hgetall(String(id), function(err, obj){
       if(obj){
-        console.log("wohoh")
          res.json({ success: true, result: obj }).end();
-      }else{
+      }else{ 
+        //if not found in cache then goes to db
         UserModel.findOne({_id:id})
         .then(result => {
           if (!result) res.json({ success: false, result: "No results found" });
@@ -68,7 +71,7 @@ module.exports = {
 
    
   },
-
+   //Delete user by ID
   delete: (req, res) => {
     let id=req.body._id;
     client.del(String(id));
